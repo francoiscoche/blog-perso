@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello TagController!{% endblock %}
+{% block body %}
+    <section class="mt-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-8">
+                <span class="link-blog">
+                    <a class="link-blog-path" href={{ path('app_home') }}>Home</a>
+                    <span class="text-xl"> > </span> 
+                    <a class="link-blog-path" href={{ path('app_about') }}>About</a>
+                </span> 
+            </div>
+            <div class="mt-4">
+            <img
+                src="https://pbs.twimg.com/profile_images/1561310982005309445/3Qv-M6Yp_400x400.jpg"
+                class="rounded-full w-32"
+                alt="Avatar"
+            />
+            </div>
+        </div>
+    </section>
+{% endblock %}
