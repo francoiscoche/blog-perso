@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Posts - François{% endblock %}
-
 {% block body %}
     <section class="mt-4">
         <div class="max-w-3xl mx-auto">
@@ -10,18 +8,25 @@
                     <a class="link-blog-path" href={{ path('app_home') }}>Home</a>
                     <span class="text-xl"> > </span> 
                     <a class="link-blog-path" href={{ path('app_post') }}>Posts</a>
+                    {% if pagination.currentPageNumber != 1 %}
+                        <span class="text-xl"> > </span> 
+                        <a class="link-blog-path" href={{ path('app_post') }}>Pagina {{ pagination.currentPageNumber }}</a>
+                    {% endif %}
                 </span> 
             </div>
-            <h1 class="ultimi-post-title text-xl mb-8">Posts</h1>
+            <h1 class="ultimi-post-title text-xl mb-8">Posts ({{ pagination.getTotalItemCount }})</h1>
             <ul class="mt-4">
-                {% for post in posts %}
+                {% for post in pagination %}
                     <li class="my-4">
                         <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-medium home-title-post text-xl mb-1">{{ post.title }}</h2></a>
                         <div class="home-date-post text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
                         <p class="home-content-post">{{ post.content | u.truncate(90, '...') }}</p>
                     </li>
                 {% endfor %}
-            </ul>  
+            </ul> 
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div> 
         </div>
     </section>
 {% endblock %}
