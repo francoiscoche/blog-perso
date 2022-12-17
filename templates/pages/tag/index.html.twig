@@ -12,7 +12,7 @@
             </div>
             <div class="text-tag mt-4 text-xl">
                 {% for tag in tags %}
-                    <a href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="px-2">#{{ tag.name }}</a>
+                    <a href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="pr-2">#{{ tag.name }}</a>
                 {% endfor %}
             </div>
         </div>
