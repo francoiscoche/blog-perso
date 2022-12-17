@@ -37,7 +37,7 @@ class TagController extends AbstractController
     #[Route('/tags/{slug}', name: 'app_tag_show', methods:['GET'])]
     public function show(Tag $tag, PostRepository $repo): Response
     {
-        $posts = $repo->findByTag($tag);
+        $posts = $repo->findPosts($tag);
 
         return $this->render('pages/tag/show.html.twig', [
             'posts' => $posts,

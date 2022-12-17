@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home', methods: ['GET'])]
     public function index(PostRepository $repo): Response
     {
-        $posts = $repo->findAll();
+        $posts = $repo->findPosts();
 
         return $this->render('pages/home/index.html.twig', [
             'posts' => $posts

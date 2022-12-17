@@ -66,20 +66,19 @@ class PostRepository extends ServiceEntityRepository
 //    }
 
 
-    public function findByTag(?Tag $tag = null): array {
+    public function findPosts(?Tag $tag = null): array {
 
         $posts =  $this->createQueryBuilder('p')
-                        // ->where('p.state = 1')
-                        // ->orderBy('p.createdAt', 'DESC');
                     ->where('p.state LIKE :state')
-                    // ->setParameter('state', '%STATE_PUBLISHED%');
-                    ->setParameter('state', '1')
-                    // ->orderBy('p.createdAt', 'DESC')
-                    ->join('p.tags', 't')
-                    ->andWhere(':tag IN (t)')
-                    ->setParameter('tag', $tag);
-                    // ->getQuery();
-                    // ->getResult();
+                    ->setParameter('state', '%STATE_PUBLISHED%')
+                    ->orderBy('p.createdAt', 'DESC');
+
+
+                    if ($tag) {
+                       $posts = $posts->join('p.tags', 't')
+                        ->andWhere(':tag IN (t)')
+                        ->setParameter('tag', $tag);
+                    }
 
         return $posts->getQuery()
         ->getResult();
