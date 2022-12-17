@@ -1,20 +1,22 @@
-version: "3.8"
-services:
+version: '3.8'
 
+services:
   db:
-    image: mysql:latest
-    container_name: mysql-blogperso
+    image: mysql
+    container_name: db_blogperso
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db_name
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - 3306:3306
     networks:
       - dev
 
   phpmyadmin:
-    image: phpmyadmin:latest
-    container_name: phpmyadmin-blogperso
+    image: phpmyadmin
+    container_name: phpmyadmin_blogperso
     restart: always
     depends_on:
       - db
@@ -25,5 +27,9 @@ services:
     networks:
       - dev
 
+
 networks:
   dev:
+
+volumes:
+  db-data:
