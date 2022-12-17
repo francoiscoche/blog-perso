@@ -31,7 +31,7 @@ class Post
     private ?string $content = null;
 
     #[ORM\Column]
-    private ?bool $state = null;
+    private ?string $state = Post::STATES[0];
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -86,12 +86,12 @@ class Post
         return $this;
     }
 
-    public function isState(): ?bool
+    public function getState(): ?string
     {
         return $this->state;
     }
-
-    public function setState(bool $state): self
+    
+    public function setState(string $state): self
     {
         $this->state = $state;
 
