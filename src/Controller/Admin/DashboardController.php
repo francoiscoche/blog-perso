@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Comments;
 use App\Entity\Tag;
 use App\Entity\Post;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,5 +49,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Posts', 'fas fa-newspaper', Post::class);
         yield MenuItem::linkToCrud('Tags', 'fas fa-hashtag', Tag::class);
+        yield MenuItem::linkToCrud('Comments', 'fas fa-comments', Comments::class);
     }
 }

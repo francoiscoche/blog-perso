@@ -39,10 +39,14 @@ class Post
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'post')]
     private Collection $tags;
 
+    #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comments::class)]
+    private Collection $comments;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->tags = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -138,6 +142,36 @@ class Post
     {
         if ($this->tags->removeElement($tag)) {
             $tag->removePost($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getPost() === $this) {
+                $comment->setPost(null);
+            }
         }
 
         return $this;

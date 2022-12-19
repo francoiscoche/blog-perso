@@ -5,6 +5,7 @@ $base-color-gray: #bdbdbddc;
 .post-title-post,
 .home-title-post,
 .home-see-all:hover,
+.section-comment-pseudo,
 nav li a:hover {
     color:$base-primary-color;
 }
@@ -26,7 +27,8 @@ footer,
 .home-social,
 .text-tag,
 .ultimi-post-title,
-.text-nessun-post {
+.text-nessun-post,
+.section-comment-color {
     color:$base-color-clear;
 }
 
