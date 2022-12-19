@@ -1,0 +1,70 @@
+$base-color-clear: #e6e6e6;
+$base-primary-color: #1ad9d9;
+$base-color-gray: #bdbdbddc;
+
+.post-title-post,
+.home-title-post,
+.home-see-all:hover,
+nav li a:hover {
+    color:$base-primary-color;
+}
+
+.post-date-post,
+.home-date-post,
+.link-blog {
+    color:$base-color-gray;
+}
+
+nav,
+footer,
+.post-content-post,
+.post-tag-post,
+.home-content-post,
+.about-text,
+.home-text,
+.home-title,
+.home-social,
+.text-tag,
+.ultimi-post-title {
+    color:$base-color-clear;
+}
+
+body {
+    background-color: #2f3741;
+    font-family: "Sanchez", sans-serif;
+
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    nav li a {
+        transition: 0.3s;
+    }
+    .border-line {
+        border-color:$base-color-gray;
+        opacity: 0.2;
+    }
+    ::-webkit-scrollbar {
+        width: 0.70rem;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgb(0 0 0 / 0%);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgb(92 97 122 / 28%);
+    }
+}
+
+.home-see-all {
+    color:$base-color-clear;
+    transition: 0.3s;
+}
+.home-social a {
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+.home-social a:hover {
+    color:$base-primary-color;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
