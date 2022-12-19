@@ -6,16 +6,27 @@
             <div class="mb-8">
                 <span class="link-blog">
                     <a class="link-blog-path" href={{ path('app_home') }}>Home</a>
-                    <span class="text-xl"> > </span> 
+                    <span class="text-xl"> > </span>
                     <a class="link-blog-path" href={{ path('app_about') }}>About</a>
-                </span> 
+                </span>
             </div>
-            <div class="mt-4">
-            <img
-                src="https://pbs.twimg.com/profile_images/1561310982005309445/3Qv-M6Yp_400x400.jpg"
-                class="rounded-full w-32"
-                alt="Avatar"
-            />
+            <div class="md:flex md:flex-row">
+                <div class="md:w-96 w-36 flex justify-center items-center mb-6 lg:mb-0 mx-auto md:mx-0" >
+                    <img
+                        src="https://pbs.twimg.com/profile_images/1561310982005309445/3Qv-M6Yp_400x400.jpg"
+                        class="rounded-full w-32"
+                        alt="Avatar"
+                    />
+                </div>
+                <div class="md:ml-6">
+                    <p class="about-text mt-4">Web developer, da Parigi a Roma, mi è sempre piaciuto sviluppare con PHP. </p>
+                    <p class="about-text">Solo di recente ho "scoperto" il framework Symfony di cui mi sono subito innamorato. Mi piace esplorare queste tante caratteristiche sviluppando casi pratici per capire e poi condividere le mie scoperte.</p>
+                    <p class="font-semibold text-lg mt-4 mb-2 text-gray-600">François</p>
+                </div>
+            </div>
+            <div class="my-8 text-lg flex items-center home-social">
+                <span class="mr-6">Social Links:</span>
+                {% include "components/_social-link.html.twig" %}
             </div>
         </div>
     </section>
