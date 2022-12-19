@@ -1,0 +1,9 @@
+{% if pagination is defined %}
+    {% for post in pagination %}
+        <li class="my-4">
+            <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-medium home-title-post text-xl mb-1">{{ post.title }}</h2></a>
+            <div class="home-date-post text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
+            <div class="home-content-post">{{ post.content | u.truncate(90, '...') | raw }}</p>
+        </li>
+    {% endfor %}
+{% endif %}

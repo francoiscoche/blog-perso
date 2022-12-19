@@ -2,10 +2,11 @@
 
 namespace App\Repository;
 
-use App\Entity\Post;
 use App\Entity\Tag;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Post;
+use App\Model\SearchData;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Post>
@@ -82,5 +83,18 @@ class PostRepository extends ServiceEntityRepository
 
         return $posts->getQuery()
         ->getResult();
+    }
+
+    public function findBySearch(SearchData $searchData) {
+
+        return $this->createQueryBuilder('p')
+                        ->where('p.state LIKE :state')
+                        ->setParameter('state', '%STATE_PUBLISHED%')
+                        ->andWhere('p.content LIKE :query')
+                        ->orWhere('p.title LIKE :query')
+                        ->setParameter('query', "%{$searchData->query}%")
+                        ->orderBy('p.createdAt', 'DESC')
+                        ->getQuery()
+                        ->getResult();
     }
 }
