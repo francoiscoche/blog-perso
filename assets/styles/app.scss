@@ -38,7 +38,7 @@ footer,
 
 body {
     background-color: #2f3741;
-    font-family: "Sanchez", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     section {
         padding-left: 1rem;
@@ -74,6 +74,37 @@ body {
     color:$base-primary-color;
     -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
+}
+
+.post-content-post {
+
+    p img {
+        display: block;
+        margin: 0 auto;
+      }
+
+    h2 {
+        font-size: 30px;
+        padding: 20px 0 20px 0;
+        color: #f7f139;
+    }
+
+    p {
+        margin : 22px 0 22px 0;
+        letter-spacing: 0.5px;
+        line-height: 1.8rem;
+        font-weight: 300;
+    }
+
+    ul li {
+        list-style-type: disc;
+        margin: 5px 0 5px 50px;
+    }
+
+    ol li {
+        list-style-type: decimal;
+        margin: 5px 0 5px 50px;
+    }
 }
 
 // @keyframes slideInFromRight {
