@@ -15,3 +15,16 @@ import 'tw-elements';
 
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
+
+document.querySelector("#theme").addEventListener("click", function() {
+    if(localStorage.getItem("checkedbox") == 'true') {
+        localStorage.setItem("checkedbox", 'false');
+        localStorage.theme = 'light'
+        document.querySelector("html").classList.remove("dark");
+    }
+    else {
+        localStorage.setItem("checkedbox", 'true');
+        localStorage.theme = 'dark'
+        document.querySelector("html").classList.add("dark")
+    }
+})
