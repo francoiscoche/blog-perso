@@ -3,7 +3,7 @@
 {% block body %}
     <section>
         <div class="max-w-3xl mx-auto mt-8">
-            <h2 class="home-title text-3xl">Bella, ragà! ✌️</h2>
+            <h2 class="font-semibold text-3xl">Bella, ragà! ✌️</h2>
             <p class="mt-8 text-lg home-text">Blog è un blog tec focalizzato principalmente sul linguaggio PHP e sullo sviluppo con il framework Symfony. Pubblico qui concetti o elementi interessanti che ho esplorato. Cerco di approfondirle condividendo qui le mie scoperte.</p>
         </div>
 
@@ -12,21 +12,21 @@
             {% include "components/_social-link.html.twig" %}
         </div>
         <div class="max-w-3xl mx-auto pb-4 pt-8">
-            <hr class="border-line" aria-hidden="true">
+            <hr class="dark:border-white border-black" aria-hidden="true">
         </div>
     </section>
     <section>
         <div class="mx-auto max-w-3xl ">
-            <h1 class="ultimi-post-title text-2xl mb-8 mt-12 font-semibold">Ultimi posts</h1>
+            <h1 class="text-2xl mb-8 mt-12 font-semibold">Ultimi posts</h1>
             <ul class="my-4">
                 {% for post in posts | slice(0, 5) %}
                     <li class="my-8">
-                        <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-medium home-title-post text-xl mb-1">{{ post.title }}</h2></a>
-                        <div class="home-date-post text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
-                        <div class="home-content-post">{{ post.content | u.truncate(90, '...') | raw }}</p>
+                        <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-semibold text-rose-900 dark:text-cyan-400 text-xl mb-1">{{ post.title }}</h2></a>
+                        <div class="dark:text-gray-400 text-gray-500 text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
+                        <div class="">{{ post.content | u.truncate(90, '...') | raw }}</p>
                     </li>
                 {% endfor %}
-            </ul>  
+            </ul>
             <div class="my-6">
                 <a class="home-see-all" type="" href={{ path('app_post') }}><p class="text-center text-lg">Vedi tutto <i class="ml-2 fas fa-arrow-right"></i></p></a>
             </div>

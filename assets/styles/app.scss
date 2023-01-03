@@ -2,43 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-$base-color-clear: #e6e6e6;
-$base-primary-color: #1ad9d9;
-$base-color-gray: #bdbdbddc;
-
-.post-title-post,
-.home-title-post,
-.home-see-all:hover,
-.section-comment-pseudo,
-nav li a:hover {
-    color:$base-primary-color;
-}
-
-.post-date-post,
-.home-date-post,
-.link-blog {
-    color:$base-color-gray;
-}
-
-nav,
-footer,
-.post-content-post,
-.post-tag-post,
-.home-content-post,
-.about-text,
-.home-text,
-.home-title,
-.home-social,
-.text-tag,
-.ultimi-post-title,
-.text-nessun-post,
-.section-comment-color {
-    color:$base-color-clear;
-}
-
-body {
-    background-color: #2f3741;
-    font-family: "Montserrat", sans-serif;
+html {
+    font-family: 'Open Sans', sans-serif;
 
     section {
         padding-left: 1rem;
@@ -46,10 +11,6 @@ body {
     }
     nav li a {
         transition: 0.3s;
-    }
-    .border-line {
-        border-color:$base-color-gray;
-        opacity: 0.2;
     }
     ::-webkit-scrollbar {
         width: 0.70rem;
@@ -63,7 +24,6 @@ body {
 }
 
 .home-see-all {
-    color:$base-color-clear;
     transition: 0.3s;
 }
 .home-social a {
@@ -71,29 +31,25 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 .home-social a:hover {
-    color:$base-primary-color;
     -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
 }
 
 .post-content-post {
-
     p img {
         display: block;
         margin: 0 auto;
-      }
+    }
 
     h2 {
         font-size: 30px;
         padding: 20px 0 20px 0;
-        color: #f7f139;
     }
 
     p {
         margin : 22px 0 22px 0;
-        letter-spacing: 0.5px;
+        // letter-spacing: 0.5px;
         line-height: 1.8rem;
-        font-weight: 300;
     }
 
     ul li {
@@ -107,15 +63,6 @@ body {
     }
 }
 
-// @keyframes slideInFromRight {
-//     0% {
-//       transform: translateX(100%);
-//     }
-//     100% {
-//       transform: translateX(0);
-//     }
-//   }
-
-//   .section-show-post {
-//     animation: 0.2s ease-out 0s 1 slideInFromRight;
-//   }
+.form-check-input:checked {
+    background-color: rgb(34 211 238) !important;
+}

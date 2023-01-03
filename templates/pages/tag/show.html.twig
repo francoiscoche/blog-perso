@@ -4,25 +4,25 @@
     <section class="mt-4">
         <div class="max-w-3xl mx-auto">
             <div class="mb-8">
-                <span class="link-blog">
-                    <a class="link-blog-path" href={{ path('app_home') }}>Home</a>
-                    <span class="text-xl"> > </span> 
-                    <a class="link-blog-path" href={{ path('app_post') }}>Tags</a>
-                    <span class="text-xl"> > </span> 
-                    <a class="link-blog-path" href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="px-2">#{{ tag.name }}</a>
-                </span> 
+                <span>
+                    <a href={{ path('app_home') }}>Home</a>
+                    <span class="text-xl"> > </span>
+                    <a href={{ path('app_post') }}>Tags</a>
+                    <span class="text-xl"> > </span>
+                    <a href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="px-2">#{{ tag.name }}</a>
+                </span>
             </div>
             <div class="mt-4">
-                <h1 class="ultimi-post-title text-xl mb-8">Posts con il tag : #{{ tag.name }}</h1>
+                <h1 class="text-xl mb-8">Posts con il tag : #{{ tag.name }}</h1>
                 <ul class="mt-4">
                     {% for post in posts %}
                         <li class="my-4">
                             <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-medium home-title-post text-xl mb-1">{{ post.title }}</h2></a>
-                            <div class="home-date-post text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
-                            <div class="home-content-post">{{ post.content | u.truncate(90, '...') | raw }}</p>
+                            <div class="dark:text-gray-400 text-gray-500 text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
+                            <div class="">{{ post.content | u.truncate(90, '...') | raw }}</p>
                         </li>
                     {% endfor %}
-                </ul>  
+                </ul>
             </div>
         </div>
     </section>

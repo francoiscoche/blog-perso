@@ -15,17 +15,17 @@
         {% if pagination is defined %}
             {% if pagination.getTotalItemCount > 0 %}
                 <div class="mb-8">
-                    <span class="link-blog">
-                        <a class="link-blog-path" href={{ path('app_home') }}>Home</a>
+                    <span>
+                        <a href={{ path('app_home') }}>Home</a>
                         <span class="text-xl"> > </span>
-                        <a class="link-blog-path" href={{ path('app_post') }}>Search</a>
+                        <a href={{ path('app_post') }}>Search</a>
                         {% if pagination.currentPageNumber != 1 %}
                             <span class="text-xl"> > </span>
-                            <a class="link-blog-path" href={{ path('app_post') }}>Pagina {{ pagination.currentPageNumber }}</a>
+                            <a href={{ path('app_post') }}>Pagina {{ pagination.currentPageNumber }}</a>
                         {% endif %}
                     </span>
                 </div>
-                <h1 class="ultimi-post-title text-xl mb-8">Posts ({{ pagination.getTotalItemCount }})</h1>
+                <h1 class="text-xl mb-8">Posts ({{ pagination.getTotalItemCount }})</h1>
                 <ul class="mt-4">
                     {% include "components/_posts.html.twig" with pagination %}
                 </ul>
