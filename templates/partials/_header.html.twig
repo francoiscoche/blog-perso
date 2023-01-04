@@ -1,14 +1,16 @@
-<div class="flex justify-between mx-auto max-w-3xl py-6 font-semibold border-b border-black dark:border-white">
+<section>
+    <div class="flex flex-col sm:flex-row justify-between mx-auto max-w-3xl py-6 font-semibold border-b border-black dark:border-white">
     <a class="text-2xl" href="{{ path('app_home') }}">Blog</a>
-    <ul class="flex flex-wrap space-x-5 text-lg">
-        <li class="p-2"><a href="{{ path('app_post') }}"><i class=""></i> Posts</a></li>
-        <li class="p-2"><a href="{{ path('app_tag') }}"><i class="fas fa-hashtag"></i> Tags</a></li>
-        <li class="p-2"><a href="{{ path('app_about') }}"><i class=""></i> About</a></li>
-        <li class="p-2"><a href="{{ path('app_search_data') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-        <li class="p-2" id="theme">
-            <div class="form-check form-switch">
-                <input class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-            </div>
-        </li>
-    </ul>
-</div>
+        <ul class="flex flex-col sm:flex-row text-lg">
+            <li class="py-2 px-4"><a href="{{ path('app_post') }}"><i class=""></i> Posts</a></li>
+            <li class="py-2 px-4"><a href="{{ path('app_tag') }}"><i class="fas fa-hashtag"></i> Tags</a></li>
+            <li class="py-2 px-4"><a href="{{ path('app_about') }}"><i class=""></i> About</a></li>
+            <li class="py-2 px-4"><a href="{{ path('app_search_data') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li class="py-2 px-4" id="theme">
+                <div class="form-check form-switch">
+                    <input class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
