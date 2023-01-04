@@ -1,18 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block title %}Blog - François{% endblock %}
 {% block body %}
-    <section>
-        <div class="max-w-3xl mx-auto mt-8">
-            <h2 class="font-semibold text-3xl">Bella, ragà! ✌️</h2>
-            <p class="mt-8 text-lg home-text">Blog è un blog tec focalizzato principalmente sul linguaggio PHP e sullo sviluppo con il framework Symfony. Pubblico qui concetti o elementi interessanti che ho esplorato. Cerco di approfondirle condividendo qui le mie scoperte.</p>
-        </div>
-
-        <div class="max-w-3xl mx-auto mt-8 text-lg flex items-center home-social">
+    <section class="max-w-3xl mx-auto mt-8 border-b border-black dark:border-white">
+        <h2 class="font-semibold text-3xl">Bella, ragà! ✌️</h2>
+        <p class="mt-8 text-lg home-text">Blog è un blog tec focalizzato principalmente sul linguaggio PHP e sullo sviluppo con il framework Symfony. Pubblico qui concetti o elementi interessanti che ho esplorato. Cerco di approfondirle condividendo qui le mie scoperte.</p>
+        <div class="my-8 text-lg items-center home-social">
             <span class="mr-6">Social Links:</span>
             {% include "components/_social-link.html.twig" %}
-        </div>
-        <div class="max-w-3xl mx-auto pb-4 pt-8">
-            <hr class="dark:border-white border-black" aria-hidden="true">
         </div>
     </section>
     <section>
