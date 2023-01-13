@@ -18,7 +18,7 @@
 			<a target="_blank" class="mr-3" href="https://twitter.com/intent/tweet?text={{ post.title | url_encode }}%20{{ absolute_url('app_show', {slug: post.slug}) }}%20"><i class="fab fa-twitter"></i></a>
 		</div>
         <div class="post-content-post my-8">{% autoescape false %}{{ post.content }}{% endautoescape %}</div>
-		<ul class="flex flex-row post-tag-post">
+		<ul class="flex flex-col post-tag-post sm:flex-row">
 			{% for tag in post.tags %}
 				<li>
 					<a href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="px-2">#{{ tag.name }}</a>
