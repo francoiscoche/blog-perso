@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
-{% block title %}Blog - François{% endblock %}
+{% block title %}Blog - Home{% endblock %}
 {% block body %}
     <section>
         <div class="max-w-3xl mx-auto mt-8 border-b border-black dark:border-white">
                 <h2 class="font-semibold text-3xl">Bella, ragà! ✌️</h2>
             <p class="mt-8 text-lg home-text">Blog è un blog tec focalizzato principalmente sul linguaggio PHP e sullo sviluppo con il framework Symfony. Pubblico qui concetti o elementi interessanti che ho esplorato. Cerco di approfondirle condividendo qui le mie scoperte.</p>
             <div class="my-8 text-lg items-center home-social">
-                <span class="mr-6">Social Links:</span>
+                <span class="mr-6 font-bold">Social Links:</span>
                 {% include "components/_social-link.html.twig" %}
             </div>
         </div>
     </section>
     <section>
         <div class="mx-auto max-w-3xl ">
-            <h1 class="text-2xl mb-8 mt-12 font-semibold">Ultimi posts</h1>
+            <h1 class="text-2xl mb-8 mt-12 font-bold">Ultimi posts</h1>
             <ul class="my-4">
                 {% for post in posts | slice(0, 5) %}
                     <li class="my-8">
@@ -24,7 +24,7 @@
                 {% endfor %}
             </ul>
             <div class="my-6">
-                <a class="home-see-all" type="" href={{ path('app_post') }}><p class="text-center text-lg">Vedi tutto <i class="ml-2 fas fa-arrow-right"></i></p></a>
+                <a class="home-see-all font-semibold" type="" href={{ path('app_post') }}><p class="text-center text-lg">Vedi tutto <i class="ml-2 fas fa-arrow-right"></i></p></a>
             </div>
         </div>
     </section>

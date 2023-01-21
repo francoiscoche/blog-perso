@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tag - François{% endblock %}
+{% block title %}Blog - Tag{% endblock %}
 {% block body %}
     <section class="mt-4">
         <div class="max-w-3xl mx-auto">
@@ -10,7 +10,7 @@
                     <a href={{ path('app_post') }}>Tags</a>
                 </span>
             </div>
-            <div class="mt-4 text-xl">
+            <div class="mt-4 text-xl font-semibold">
                 {% for tag in tags %}
                     <a href="{{ path('app_tag_show', { slug : tag.slug }) }}" class="pr-4">#{{ tag.name }}</a>
                 {% endfor %}

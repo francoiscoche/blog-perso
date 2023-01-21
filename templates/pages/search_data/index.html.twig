@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SearchDataController!{% endblock %}
+{% block title %}Blog - Ricerca{% endblock %}
 
 {% block body %}
     <section class="mt-4">
-        <div class="max-w-3xl mx-auto">
-            {{ form_start(form) }}
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        {{ form_widget(form.query) }}
-                    </div>
+        {{ form_start(form) }}
+            <div class="flex justify-center">
+                <div class="mb-3">
+                    {{ form_widget(form.query) }}
                 </div>
+            </div>
         {{ form_end(form) }}
         {% if pagination is defined %}
             {% if pagination.getTotalItemCount > 0 %}
@@ -36,6 +35,5 @@
                 <h2 class="text-xl mt-4 text-nessun-post">Nessun post trovato</h2>
             {% endif %}
         {% endif %}
-        </div>
     </section>
 {% endblock %}
