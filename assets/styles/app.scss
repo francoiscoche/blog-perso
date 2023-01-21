@@ -45,12 +45,33 @@ html {
     h2 {
         font-size: 30px;
         padding: 20px 0 20px 0;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .code {
+        @apply bg-[#dfdfdf] dark:bg-stone-900;
+        // background-color: #131313;
+        padding: 20px;
+        p {
+            margin: 0;
+            line-height: 1.2rem;
+        }
     }
 
     p {
-        margin : 22px 0 22px 0;
+        margin : 5px 0 0px 0;
         // letter-spacing: 0.5px;
         line-height: 1.8rem;
+
+        a {
+            text-decoration: underline !important;
+            font-weight: 600;
+        }
     }
 
     ul li {
@@ -62,6 +83,14 @@ html {
         list-style-type: decimal;
         margin: 5px 0 5px 50px;
     }
+    ::marker {
+        font-weight: 800;
+    }
+
+    span.marker {
+    background-color: #aeaeae;
+    padding: 3px;
+}
 }
 
 .form-check-input:checked {
@@ -78,6 +107,6 @@ blockquote {
 }
 
 blockquote {
-    border-left: 5px solid hsl(0deg,0%,86%);
+    border-left: 5px solid hsl(37deg 90% 55%);
     padding: 1.25em 1.5em;
 }
