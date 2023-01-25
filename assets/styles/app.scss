@@ -98,6 +98,11 @@ html {
         padding: 5px;
         font-weight: 600;
     }
+
+    pre code {
+        overflow: overlay;
+    }
+
 }
 
 .form-check-input:checked {

@@ -26,7 +26,7 @@ class SearchDataController extends AbstractController
         {
             $posts = $postRepository->findBySearch($searchData);
 
-            $pagination = $paginator->paginate(
+            $posts = $paginator->paginate(
                     $posts, /* query NOT result */
                     $request->query->getInt('page', 1), /*page number*/
                     10 /*limit per page*/
@@ -34,7 +34,7 @@ class SearchDataController extends AbstractController
 
             return $this->render('pages/search_data/index.html.twig', [
                 'form' => $form->createView(),
-                'pagination' => $pagination
+                'posts' => $posts
             ]);
         }
 

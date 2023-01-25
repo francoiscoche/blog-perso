@@ -28,14 +28,14 @@ class PostController extends AbstractController
         // $query = $repo->findAll();
         $query = $repo->findPosts();
 
-        $pagination = $paginator->paginate(
+        $posts = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
             10 /*limit per page*/
         );
 
         return $this->render('pages/post/index.html.twig', [
-            'pagination' => $pagination,
+            'posts' => $posts,
         ]);
     }
 

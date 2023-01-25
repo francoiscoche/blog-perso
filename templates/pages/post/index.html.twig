@@ -8,18 +8,18 @@
                     <a href={{ path('app_home') }}>Home</a>
                     <span class="text-xl"> > </span>
                     <a href={{ path('app_post') }}>Posts</a>
-                    {% if pagination.currentPageNumber != 1 %}
+                    {% if posts.currentPageNumber != 1 %}
                         <span class="text-xl"> > </span>
-                        <a href={{ path('app_post') }}>Pagina {{ pagination.currentPageNumber }}</a>
+                        <a href={{ path('app_post') }}>Pagina {{ posts.currentPageNumber }}</a>
                     {% endif %}
                 </span>
             </div>
-            <h1 class="text-xl mb-8">Posts ({{ pagination.getTotalItemCount }})</h1>
+            <h1 class="text-xl mb-8 font-bold">Posts ({{ posts.getTotalItemCount }})</h1>
             <ul class="mt-4">
-                {% include "components/_posts.html.twig" with pagination %}
+                {% include "components/_posts.html.twig" with posts %}
             </ul>
             <div class="navigation">
-                {{ knp_pagination_render(pagination) }}
+                {{ knp_pagination_render(posts) }}
             </div>
         </div>
     </section>

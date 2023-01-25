@@ -4,36 +4,38 @@
 
 {% block body %}
     <section class="mt-4">
-        {{ form_start(form) }}
-            <div class="flex justify-center">
-                <div class="mb-3">
-                    {{ form_widget(form.query) }}
+        <div class="max-w-3xl mx-auto">
+            {{ form_start(form) }}
+                <div class="flex justify-center">
+                    <div class="mb-3">
+                        {{ form_widget(form.query) }}
+                    </div>
                 </div>
-            </div>
-        {{ form_end(form) }}
-        {% if pagination is defined %}
-            {% if pagination.getTotalItemCount > 0 %}
-                <div class="mb-8">
-                    <span>
-                        <a href={{ path('app_home') }}>Home</a>
-                        <span class="text-xl"> > </span>
-                        <a href={{ path('app_post') }}>Search</a>
-                        {% if pagination.currentPageNumber != 1 %}
+            {{ form_end(form) }}
+            {% if posts is defined %}
+                {% if posts.getTotalItemCount > 0 %}
+                    <div class="mb-8">
+                        <span>
+                            <a href={{ path('app_home') }}>Home</a>
                             <span class="text-xl"> > </span>
-                            <a href={{ path('app_post') }}>Pagina {{ pagination.currentPageNumber }}</a>
-                        {% endif %}
-                    </span>
-                </div>
-                <h1 class="text-xl mb-8">Posts ({{ pagination.getTotalItemCount }})</h1>
-                <ul class="mt-4">
-                    {% include "components/_posts.html.twig" with pagination %}
-                </ul>
-                <div class="navigation">
-                    {{ knp_pagination_render(pagination) }}
-                </div>
-            {% else %}
-                <h2 class="text-xl mt-4 text-nessun-post">Nessun post trovato</h2>
+                            <a href={{ path('app_post') }}>Search</a>
+                            {% if posts.currentPageNumber != 1 %}
+                                <span class="text-xl"> > </span>
+                                <a href={{ path('app_post') }}>Pagina {{ posts.currentPageNumber }}</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                    <h1 class="text-xl mb-8">Posts ({{ posts.getTotalItemCount }})</h1>
+                    <ul class="mt-4">
+                        {% include "components/_posts.html.twig" with posts %}
+                    </ul>
+                    <div class="navigation">
+                        {{ knp_pagination_render(posts) }}
+                    </div>
+                {% else %}
+                    <h2 class="text-xl mt-4 text-nessun-post">Nessun post trovato</h2>
+                {% endif %}
             {% endif %}
-        {% endif %}
+        </div>
     </section>
 {% endblock %}
