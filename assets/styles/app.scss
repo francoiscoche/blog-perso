@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/open_sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype')
+}
+
 html {
     font-family: 'Open Sans', sans-serif;
 
