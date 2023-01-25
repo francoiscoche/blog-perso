@@ -5,7 +5,7 @@
         <div class="max-w-3xl mx-auto mt-8 border-b border-black dark:border-white">
                 <h2 class="font-semibold text-3xl">Bella, ragà! ✌️</h2>
             <p class="mt-8 text-lg home-text">Blog è un blog tec focalizzato principalmente sul linguaggio PHP e sullo sviluppo con il framework Symfony. Pubblico qui concetti o elementi interessanti che ho esplorato. Cerco di approfondirle condividendo qui le mie scoperte.</p>
-            <div class="my-8 text-lg items-center home-social">
+            <div class="my-8 text-lg flex items-center home-social">
                 <span class="mr-6 font-bold">Social Links:</span>
                 {% include "components/_social-link.html.twig" %}
             </div>
@@ -18,7 +18,7 @@
                 {% for post in posts | slice(0, 5) %}
                     <li class="my-8">
                         <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-semibold text-rose-900 dark:text-cyan-400 text-xl mb-1">{{ post.title }}</h2></a>
-                        <div class="dark:text-gray-400 text-gray-500 text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
+                        <div class="dark:text-gray-400 text-gray-500 text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|format_datetime(locale='it', pattern="EEEE dd MMMM YYYY | HH:mm")}}</div>
                         <div class="">{{ post.content | u.truncate(90, '...') | raw }}</p>
                     </li>
                 {% endfor %}

@@ -15,13 +15,7 @@
             <div class="mt-4">
                 <h1 class="text-xl mb-8">Posts con il tag : #{{ tag.name }}</h1>
                 <ul class="mt-4">
-                    {% for post in posts %}
-                        <li class="my-4">
-                            <a href={{ path('app_post_show', { slug : post.slug }) }}><h2 class="font-medium home-title-post text-xl mb-1">{{ post.title }}</h2></a>
-                            <div class="dark:text-gray-400 text-gray-500 text-sm italic"><i class="fas fa-calendar-days"> </i> {{ post.createdAt|date("F j, Y | g:i a") }}</div>
-                            <div class="">{{ post.content | u.truncate(90, '...') | raw }}</p>
-                        </li>
-                    {% endfor %}
+                    {% include "components/_posts.html.twig" with posts %}
                 </ul>
             </div>
         </div>
