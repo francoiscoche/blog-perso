@@ -1,1 +1,1 @@
-web : php bin/console doctrine:migrations:migrate && php -S 0.0.0.0:8000 -t public
+web : php bin/console doctrine:migrations:migrate && php -S 0.0.0.0:8000 -t public && composer dump-autoload --optimize
