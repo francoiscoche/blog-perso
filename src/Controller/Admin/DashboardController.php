@@ -2,9 +2,10 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Comments;
 use App\Entity\Tag;
+use App\Entity\Til;
 use App\Entity\Post;
+use App\Entity\Comments;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -48,6 +49,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Posts', 'fas fa-newspaper', Post::class);
+        yield MenuItem::linkToCrud('Til', 'fas fa-lightbulb', Til::class);
         yield MenuItem::linkToCrud('Tags', 'fas fa-hashtag', Tag::class);
         yield MenuItem::linkToCrud('Comments', 'fas fa-comments', Comments::class);
     }

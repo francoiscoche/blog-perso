@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog - Til{% endblock %}
+
+{% block body %}
+    <section class="mt-4">
+        <div class="max-w-3xl mx-auto py-8">
+            <div class="mb-8">
+                <span class="font-bold">
+                    <a href={{ path('app_home') }}>Home</a>
+                    <span class="text-xl"> > </span>
+                    <a href={{ path('app_post') }}>T.I.L (Today I learned)</a>
+                </span>
+            </div>
+            {% for til in tils %}
+                <div class="flex justify-center my-8">
+                    <div class="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg bg-[#f6f6f6] dark:bg-[#e7e7e7] border">
+                        <div class="flex flex-col justify-start mx-8 text-center my-8">
+                            <div class="text-black font-bold uppercase">{{ til.createdAt|format_datetime(locale='it', pattern="EEEE") }}</div>
+                            <div class="text-8xl my-2 text-rose-700 font-bold">{{ til.createdAt|format_datetime(locale='it', pattern="dd") }}</div>
+                            <div class="text-black font-bold uppercase">{{ til.createdAt|format_datetime(locale='it', pattern="MMMM") }}</div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-start text-black justify-between">
+                            <h5 class="text-gray-900 text-xl mb-2 font-bold">{{ til.title }}</h5>
+                            <p class="text-gray-700 text-base mb-4">{{ til.text | raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
