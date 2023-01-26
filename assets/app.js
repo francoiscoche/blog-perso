@@ -9,12 +9,12 @@
 import './styles/app.scss';
 
 // start the Stimulus application
-import './bootstrap';
+// import './bootstrap';
 
 import 'tw-elements';
 
 require('@fortawesome/fontawesome-free/css/all.min.css');
-require('@fortawesome/fontawesome-free/js/all.js');
+// require('@fortawesome/fontawesome-free/js/all.js');
 
     const element = document.getElementById("icon-sun-moon");
 
