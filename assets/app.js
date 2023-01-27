@@ -7,14 +7,17 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
-
+import '../public/bundles/ckeditor_custom/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css';
 // start the Stimulus application
 // import './bootstrap';
 
 import 'tw-elements';
+import hljs from 'highlight.js';
 
 require('@fortawesome/fontawesome-free/css/all.min.css');
 // require('@fortawesome/fontawesome-free/js/all.js');
+
+hljs.highlightAll()
 
     const element = document.getElementById("icon-sun-moon");
 
