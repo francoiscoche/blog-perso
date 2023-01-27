@@ -12,7 +12,7 @@ class TilController extends AbstractController
     #[Route('/til', name: 'app_til')]
     public function index(TilRepository $tilRepo): Response
     {
-        $tils = $tilRepo->findAll();
+        $tils = $tilRepo->findBy([], ['createdAt'=>'DESC']);
 
         return $this->render('pages/til/index.html.twig', [
             'tils' => $tils,
