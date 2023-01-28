@@ -21,6 +21,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PostCrudController extends AbstractCrudController
 {
@@ -43,7 +44,7 @@ class PostCrudController extends AbstractCrudController
         // ->setPaginatorPageSize(10)
         ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -61,8 +62,10 @@ class PostCrudController extends AbstractCrudController
                         ->orderBy('t.name', 'ASC');
                 },
                 'by_reference' => false,
-            ])
+            ]),
+
+            TextareaField::new('imageFile')->setFormType(VichImageType::class)
         ];
     }
-    
+
 }

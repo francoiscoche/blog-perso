@@ -17,7 +17,9 @@
 			<a target="_blank" class="mr-3" href="https://www.facebook.com/sharer/sharer.php?u={{ absolute_url('app_show', {slug: post.slug}) }}"><i class="fab fa-facebook-f"></i></a>
 			<a target="_blank" class="mr-3" href="https://twitter.com/intent/tweet?text={{ post.title | url_encode }}%20{{ absolute_url('app_show', {slug: post.slug}) }}%20"><i class="fab fa-twitter"></i></a>
 		</div>
-		<img src="{{ asset('assets/images/cloud-cover.png') }}" class="max-w-full h-auto my-8" alt="..." />
+		{% if post.imageName %}
+			<img src="{{ asset('images/banner/') ~ post.imageName }}" class="max-w-full h-auto my-8" alt="..." />
+		{% endif %}
         <div class="post-content-post my-8">{% autoescape false %}{{ post.content }}{% endautoescape %}</div>
 		<ul class="flex flex-col post-tag-post sm:flex-row font-bold">
 			{% for tag in post.tags %}
